@@ -8,14 +8,14 @@ body, html {
     align-items: center;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    background: url('https://ayr.ai/wp-content/uploads/2022/09/1-2.png') no-repeat center center fixed; 
     background-size: cover;
 }
 
 .title {
     font-size: 36px;
+    margin-left: 20px;
     color: black; 
-    margin-bottom: 300px; 
+    margin-bottom: 100px; 
     text-shadow: 2px 2px 4px #000000; 
 }
 
@@ -27,16 +27,29 @@ body, html {
     text-align: right;
 }
 
+.left-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    text-align: left;
+}
+
+.company-info span {
+    display: block;
+    font-size: large;
+
+}
+
 .user-info span {
     display: block;
+    font-size: large;
 }
 
 .container {
     text-align: center;
     border: 2px solid #000;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 10px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -56,4 +69,17 @@ body, html {
 }
 #increment-btn:hover {
     background-color: #0056b3; 
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 20px;
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff; /* Adjust the color to match your branding */
 }
