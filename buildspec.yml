@@ -10,17 +10,18 @@ phases:
   pre_build:
     commands:
       - echo Pre-build phase...
+      # Here, you can add any steps necessary before the application runs, 
+      # such as linting or unit tests.
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Node.js application...
-      - npm run build # Use this if your project has a compilation step
+      - echo Build phase, primarily used for compiling or testing in this context...
+      # Since there's no compilation step, you might use this phase for running tests.
+      # e.g., npm test (if you have tests configured)
   post_build:
     commands:
       - echo Build completed on `date`
-      # If you have database migration scripts, you might reference them here
-      # e.g., npm run migrate -- --host=$DB_HOST --user=$DB_USER --password=$DB_PASSWORD
+      # Any actions after the build, like cleanup or notifications.
 artifacts:
   files:
-    - '**/*'
+    - '**/*' # Specify the files to include in the output artifact
   discard-paths: no
