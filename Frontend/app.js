@@ -1,7 +1,7 @@
 const button = document.getElementById('increment-btn');
 
 const fetchCounter = () => {
-    fetch('http://localhost:3000/counter')
+    fetch('/counter')
         .then(response => response.json())
         .then(data => document.getElementById('counter').innerText = data.count)
         .catch(error => console.error('Error:', error));
@@ -11,7 +11,7 @@ const incrementCounter = () => {
     button.style.backgroundColor = '#004099'; // Darker shade for click effect
     button.style.color = '#ccc'; // Change text color on click for better visibility
 
-    fetch('http://localhost:3000/increment', { method: 'POST' })
+    fetch('/increment', { method: 'POST' })
         .then(response => response.json())
         .then(data => {
             document.getElementById('counter').innerText = data.count;

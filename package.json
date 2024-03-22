@@ -7,9 +7,9 @@
   "name": "project-cloud-clicker",
   "description": "A web-application where the user can see a global counter and it updates when the user clicks on the button.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "Backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Backend/server.js"
   },
   "keywords": [],
   "author": "",

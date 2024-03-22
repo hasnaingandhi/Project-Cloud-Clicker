@@ -1,19 +1,19 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;;
 
 app.use(cors());
 app.use(express.json());
 
-/*const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'pwd@1234',
-  database: 'cloudclickerdb'
-});*/
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'pwd@1234',
+//   database: 'cloudclickerdb'
+// });
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -21,6 +21,10 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
+app.use(express.static(path.join(__dirname, '..', 'Frontend')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'Frontend', 'index.html'));
+});
 app.get('/counter', (req, res) => {
   db.query('SELECT value FROM counter WHERE id = 1', (err, result) => {
     if (err) throw err;
