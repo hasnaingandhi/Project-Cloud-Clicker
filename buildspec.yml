@@ -18,5 +18,3 @@ artifacts:
     - package-lock.json
     - package.json
     - README.md
-    -.gitignore
-  base-directory: /
