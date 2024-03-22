@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html # Change this to the directory where your application should be deployed
+hooks:
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: ec2-user # Change this according to your instance's user
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: ec2-user
