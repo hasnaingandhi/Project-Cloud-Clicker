@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Pre-build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js application...
+      - npm run build # Use this if your project has a compilation step
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      # If you have database migration scripts, you might reference them here
+      # e.g., npm run migrate -- --host=$DB_HOST --user=$DB_USER --password=$DB_PASSWORD
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
