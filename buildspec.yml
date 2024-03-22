@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+  build:
+    commands:
+      - echo Build started on `date`
+      - cd Backend && npm install
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - Backend/**/*
+    - Frontend/**/*
+    - package-lock.json
+    - package.json
+    - README.md
+    -.gitignore
+  base-directory: /
