@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing NPM dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Placeholder for any pre-build steps...
+  build:
+    commands:
+      - echo No build required for this application...
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
