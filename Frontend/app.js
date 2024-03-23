@@ -8,8 +8,8 @@ const fetchCounter = () => {
 };
 
 const incrementCounter = () => {
-    button.style.backgroundColor = '#004099'; // Darker shade for click effect
-    button.style.color = '#ccc'; // Change text color on click for better visibility
+    button.style.backgroundColor = '#004099'; 
+    button.style.color = '#ccc'; 
 
     fetch('/increment', { method: 'POST' })
         .then(response => response.json())
@@ -17,13 +17,12 @@ const incrementCounter = () => {
             document.getElementById('counter').innerText = data.count;
             setTimeout(() => {
                 button.style.backgroundColor = '#007bff';
-                button.style.color = '#fff'; // Reset text color
-            }, 200); // Reset button style after 200ms
+                button.style.color = '#fff'; 
+            }, 200); 
         })
         .catch(error => console.error('Error:', error));
 };
 
 button.addEventListener('click', incrementCounter);
 
-// Fetch the current counter value when the window loads
 window.onload = fetchCounter;
